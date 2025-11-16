@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌾 Crop Recommendation System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-green-50 min-h-screen p-4">
+<div class="max-w-4xl mx-auto">
+
+    <!-- Header -->
+    <header class="text-center mb-6">
+        <h1 class="text-5xl font-extrabold text-green-700 animate-pulse">
+            🌾 Crop Recommendation Dashboard
+        </h1>
+        <p class="text-gray-700 mt-2">Get recommended crops based on weather & soil data</p>
+    </header>
+
+    <!-- Tabs -->
+    <div class="flex justify-center mb-6 space-x-4">
+        <button class="tabBtn px-4 py-2 rounded-lg bg-green-600 text-white font-semibold" data-tab="recommendTab">
+            Recommend
+        </button>
+        <button class="tabBtn px-4 py-2 rounded-lg bg-gray-200 text-gray-800 font-semibold" data-tab="historyTab">
+            History
+        </button>
+    </div>
+
+    <!-- Recommendation Tab -->
+    <div id="recommendTab" class="tabContent">
+
+        <!-- Input Form -->
+        <div class="bg-white p-6 rounded-xl shadow-lg mb-4">
+            <h2 class="text-2xl font-bold text-green-700 mb-4">Enter Details</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="font-semibold">🌍 Location</label>
+                    <input id="location" type="text" placeholder="City / Village"
+                           class="w-full p-2 mt-1 border rounded-lg">
+                </div>
+
+                <div>
+                    <label class="font-semibold">📅 Month</label>
+                    <select id="month" class="w-full p-2 mt-1 border rounded-lg">
+                        <option value="">Select Month</option>
+                        <option>January</option><option>February</option><option>March</option>
+                        <option>April</option><option>May</option><option>June</option>
+                        <option>July</option><option>August</option><option>September</option>
+                        <option>October</option><option>November</option><option>December</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="font-semibold">🧪 pH</label>
+                    <input id="location" type="text" placeholder=""
+                           class="w-full p-2 mt-1 border rounded-lg">
+                </div>
+
+                <div>
+                    <label class="font-semibold">🧪 Nitrogen (N)</label>
+                    <input id="n" type="number" class="w-full p-2 mt-1 border rounded-lg">
+                </div>
+
+                <div>
+                    <label class="font-semibold">🧪 Phosphorous (P)</label>
+                    <input id="p" type="number" class="w-full p-2 mt-1 border rounded-lg">
+                </div>
+
+                <div>
+                    <label class="font-semibold">🧪 Potassium (K)</label>
+                    <input id="k" type="number" class="w-full p-2 mt-1 border rounded-lg">
+                </div>
+            </div>
+
+            <button id="recommendBtn"
+                    class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 
+                           mt-4 rounded-lg transition duration-300">
+                Recommend Crop
+            </button>
+        </div>
+
+        <!-- Output -->
+        <div id="recommendResult" class="bg-green-100 p-4 rounded-xl shadow-inner hidden">
+            <h2 class="text-2xl font-bold text-green-800 mb-2">Recommended Crop:</h2>
+            <p id="cropName" class="text-lg font-semibold"></p>
+            <p id="reasoning" class="text-gray-700 mt-2"></p>
+        </div>
+
+    </div>
+
+    <!-- History Tab -->
+    <div id="historyTab" class="tabContent hidden">
+        <h2 class="text-2xl font-bold text-green-800 mb-4">Recommendation History</h2>
+        <ul id="historyList" class="space-y-2"></ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
