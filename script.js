@@ -81,9 +81,9 @@ recommendBtn.addEventListener("click", async () => {
         reasoning.innerHTML = `
             <p><b>Top 3 recommendations:</b></p>
             <ul class="list-disc ml-6">
-                <li>${data.top_3_crops[0].crop} (confidence: ${data.top_3_crops[0].confidence.toFixed(2)})</li>
-                <li>${data.top_3_crops[1].crop} (confidence: ${data.top_3_crops[1].confidence.toFixed(2)})</li>
-                <li>${data.top_3_crops[2].crop} (confidence: ${data.top_3_crops[2].confidence.toFixed(2)})</li>
+                <li>${data.top_3_crops[0].crop} (confidence: ${(data.top_3_crops[0]*100).confidence.toFixed(2)})</li>
+                <li>${data.top_3_crops[1].crop} (confidence: ${(data.top_3_crops[1]*100).confidence.toFixed(2)})</li>
+                <li>${data.top_3_crops[2].crop} (confidence: ${(data.top_3_crops[2]*100).confidence.toFixed(2)})</li>
             </ul>
 
             <p class="mt-3"><b>Weather (3-month avg):</b></p>
